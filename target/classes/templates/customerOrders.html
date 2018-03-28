@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!-- directive designates the root element of the applicaion-->
+<html ng-app="NetFloristApp">
+    <head>
+        <title>Customer-Orders</title>
+        <script src="./js/angular.js"></script>
+        <script type="text/javascript" src="./js/angular-route.min.js"></script>
+	<script src="./js/app.js"></script>
+      
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>           
+
+
+    </head>
+            <style>
+             /* styles the nav bar */  
+            .navbar {
+                margin-bottom: 50px;
+                border-radius: 0;
+
+                background-color:purple;
+            }
+            
+
+        </style>
+
+    <body ng-controller="OrderController">
+           <div class="container" >
+               <a href="customerHomePage.html">
+         <img src="./css/images.png" style="width:150;height:50; " /></a>
+        
+        <nav class="navbar navbar-inverse">
+
+
+            <div class="container-fluid">
+                
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav " >
+
+                        <li> <a href="">Welcome: {{users.name}} {{users.surname}}</a></li>
+                       
+                        <li><a href="customerHomePage.html">Home</a></li>
+                        <li><a href="">Flowers</a></li>
+                            <li><a href="">Gifts</a></li>
+
+                        
+
+                        <li><a href="" >help</a></li>
+
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+
+                        <li class="dropdown dropdown-right">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Info
+                                <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+
+
+                                <li><a href="/">Log Out</a></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+  
+            
+            <input type="text" id="myInput" ng-model="orderNo" placeholder="Enter Order No..." style="width:80%;  padding: 12px 20px;  margin: 8px 0;box-sizing: border-box;}"/>
+            <input type="button" id="checkOrder" value="Check Order"  class="checkOrder" ng-click="trackOrder(orderNo)"/>
+                       
+          <table id="tbl" align="center">
+               <tr>
+                  <th>Order Number</th>
+                  <th>Order Image</th>
+                  <th> Order Description</th>
+                  <th>Order Status</th>
+                  <th>Order Date</th>
+               </tr>
+
+               <tr ng-repeat="ord in ordersIn">
+                   <td>{{ord.orderno}}</td>
+                   <td><span><img ng-src="{{ord.image}}" width="200" height="200" alt=""/></span></td>
+                   <td>{{ord.name}}</td>
+                   <td>{{ord.orderstatus}}</td>
+                   <td>{{ord.orderdate}}</td>
+                   
+               </tr>
+               
+           </table>
+           </div>
+       
+   </body>
+</html>
+
+    
+

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<!-- directive designates the root element of the applicaion-->
+<html ng-app="NetFloristApp">
+    <head>
+        <title>Customer-Home</title>
+        <script src="./js/angular.js"></script>
+        <script type="text/javascript" src="./js/angular-route.min.js"></script>
+        <script src="./js/app.js"></script>
+     
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>           
+
+        
+        <script>
+            $(document).ready(function(){
+            $("#myBtn").click(function(){
+            $("#myModal").modal();
+            });
+            });
+            $(document).ready(function(){
+            $("#myBtnDelivary").click(function(){
+            $("#myModalDelivary").modal();
+            });
+            });
+            $(document).ready(function(){
+            $("#myBtnBank").click(function(){
+            $("#myModalBank").modal();
+            });
+            });
+            /* Remove the navbar's default rounded borders and increase the bottom margin */
+
+
+        </script>
+        
+        <style>
+            /* styles the nav bar */ 
+            .navbar {
+                margin-bottom: 50px;
+                border-radius: 0;
+
+                background-color:#c49cde;
+            }
+            /* Remove the jumbotron's default bottom margin */ 
+            .jumbotron {
+                margin-bottom: 500000;
+
+            }
+
+            /* Add a  background color and some padding to the footer */
+            footer {
+                background-color:#ffffff;
+                padding: 30px;
+
+
+            }
+
+        </style>
+        
+                <style>
+            /* Remove the navbar's default rounded borders and increase the bottom margin */ 
+            .navbar {
+                margin-bottom: 50px;
+                border-radius: 0;
+
+                background-color:purple;
+            }
+            
+
+        </style>
+
+    </head>
+
+    <body ng-controller="OrderController"> 
+        <div class="container" >
+         <a href="adminHomePage.html">
+            <img src="./css/images.png" style="width:150;height:50; " /></a>
+       
+
+        
+
+        <nav class="navbar navbar-inverse">
+
+
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+
+                        <span class="icon-bar"></span>                        
+                    </button>
+                    <a class="navbar-brand" href="#"></a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav " >
+
+                        <li> <a href="">Welcome: {{users.name}} {{users.surname}}</a></li>
+                        
+
+                        <li><a href="" >help</a></li>
+
+                    </ul>
+                    
+                   <ul class="nav navbar-nav navbar-right">
+                     <li> Search  <input type="text" class="form-control" size="50" ng-model="searchText.name" placeholder="Search item by name"/></li>
+<li><a href="/">Log Out</a></li>  
+              
+            
+             
+                        
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+        
+        <h1  align="center">Products Needed to be supplied</h1>
+        
+        <div>
+             <table id="tbl">
+              
+
+               <tr ng-repeat="product in ord | filter:searchText" >
+                   <td><img ng-src="{{product.image}}" width="200" height="150" alt=""/></td>
+                   <td>{{product.name}}</td>
+                   <td>-</td>
+                   <td>Delivery Amount {{product.totalq}}</td>
+                   <td>-</td>
+                   <td>Amount in stock-{{product.quantity}}</td>
+                   
+                   
+                   
+               </tr>
+           </table>
+        </div>
+        </div>
+        
+
+    </body>
+</html>
+
+
+

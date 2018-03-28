@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!-- directive designates the root element of the applicaion-->
+<html lang="en-US" ng-app="NetFloristApp">
+    <head>
+        <title>Administrator-Register</title>
+        <script src="./js/angular.js"></script>
+        <script type="text/javascript" src="./js/angular-route.min.js"></script>
+	<script src="./js/app.js"></script>
+       
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+       
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    </head>
+    
+            <style>
+            /* styles the nav bar */  
+            .navbar {
+                margin-bottom: 50px;
+                border-radius: 0;
+
+                background-color:purple;
+            }
+            
+
+        </style>
+    
+        <body  ng-controller="RegisterController">
+            <div class="container" >
+                <a href="adminHomePage.html">
+            <img src="./css/images.png" style="width:150;height:50; " /></a>
+            
+            
+            <div class="container" >
+                
+                  <nav class="navbar navbar-inverse">
+               <ul class="nav navbar-nav ">
+                    <li><a href="">Admin:{{user.name}} {{user.surname}}</a></li>
+                    <li><a href="./adminHomePage.html">Admin Home</a></li>
+                    <li><a href="./addProduct.html">Add Product</a></li>
+                   
+                    <li><a href="./addCategory.html">Add Category</a></li>
+                    <li><a href="./registerSupplier.html">Add Supplier</a></li>
+                    <li><a href="./viewOrders.html">View Orders</a></li>
+                    <li><a href="./registerSupplier.html">Add Supplier</a></li>
+                    <li><a href="./login.html">Log Out</a></li>
+                </ul>
+                 </nav>
+                
+                 <h1  align="center">Register New Administrator</h1>
+                 
+           <div id="container_demo" >
+               
+                                <div class="modal-body" style="padding:40px 50px;">
+                                    <form name="register">                                     
+                                        <div class="form-group">
+                                            <label for="firstName"><span class="glyphicon glyphicon"></span> First Name</label>
+                                            <input type="text"  class="form-control" id="firstName" placeholder="Enter first name"  ng-model="fname" required="required"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="lastName"><span class="glyphicon glyphicon"></span> Last Name</label>
+                                            <input type="text" class="form-control" id="lastName" placeholder="Enter Last Name" ng-model="lname" required="required"/>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="emailsignup"><span class="glyphicon glyphicon"></span> E-mail</label>
+                                            <input type="email" class="form-control" id="emailsignup" placeholder="email@gmail.com" ng-model="email" required="required"/>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="cellNo"><span class="glyphicon glyphicon"></span> Mobile number</label>
+                                            <input type="text" class="form-control" id="cellNo" placeholder="mobile number" ng-model="mobileNo" required="required"/>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="passwordsignup"><span class="glyphicon glyphicon-eye-open"></span> Your password</label>
+                                            <input type="password" class="form-control" id="passwordsignup" placeholder="enter password" ng-model="password" required="required"/>
+                                        </div>
+                                        <button type="submit" class="btn btn-success btn-block" ng-click="registerUsers('1')" value="Sign up"><span class="glyphicon glyphicon-off"></span> Register</button>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+
+                                </div>
+                            </div>
+        </div>
+            </div>
+    </body>
+</html>
+

@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: netfloristSpring
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: Reverside
+Implementation-Vendor-Id: com.netflorist
+Build-Jdk: 1.8.0_161
+Implementation-URL: http://projects.spring.io/spring-boot/netfloristSp
+ ring/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+
