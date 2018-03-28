@@ -1,0 +1,115 @@
+<div ng-app = "myApp" class="top-content">
+        	
+            <div class="inner-bg">
+                <div class="container">
+                	<script src="./static/js/myApp.js"></script>
+		<script src="./static/js/controller.js"></script>
+				<script src="./static/js/angulajs.js"></script>
+		
+                    <div class="row">
+                        <div class="col-sm-8 col-sm-offset-2 text">
+                            <h1>NetFlorist Login &amp; Register Forms</h1>
+                            <div class="description">
+                            	<p>
+	                            	
+                            	</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-sm-5">
+                        	
+                        	<div class="form-box">
+	                        	<div class="form-top">
+	                        		<div class="form-top-left">
+	                        			<h3>Login </h3>
+	                            		<p>Enter username and password to log on:</p>
+	                        		</div>
+	                        		<div class="form-top-right">
+	                        			<i class="fa fa-key"></i>
+	                        		</div>
+	                            </div>
+	                            <div class="form-bottom">
+				                    <form ng-controller="loginCtrl">
+				                    	<div class="form-group">
+				                    		<label class="sr-only" for="form-username">Username</label>
+				                        	<input type="text" ng-model="inputUsername" name="form-username" placeholder="Username..." class="form-username form-control" id="form-username"  ></input>
+				                      		
+				                        </div>
+				                        <div class="form-group">
+				                        	<label class="sr-only" for="form-password">Password</label>
+				                        	<input type="password" ng-model="inputPassword" name="form-password" placeholder="Password..." class="form-password form-control" id="form-password" ></input>
+				                        </div>
+				                        <button type="submit" class="btn" ng-submit="login()" role="form" action="" method="post" class="login-form">Sign in!</button>
+				                      
+				                        
+				                      
+				                    </form>
+			                    </div>
+		                    </div>
+		                
+		                	
+	                        
+                        </div>
+                        
+                        <div class="col-sm-1 middle-border"></div>
+                        <div class="col-sm-1"></div>
+                        	
+                        <div class="col-sm-5">
+                        	
+                        	<div class="form-box">
+                        		<div class="form-top">
+	                        		<div class="form-top-left">
+	                        			<h3>No Account? Sign up now</h3>
+	                            		
+	                        		</div>
+	                        		<div class="form-top-right">
+	                        			<i class="fa fa-pencil"></i>
+	                        		</div>
+	                            </div>
+	                            <div class="form-bottom">
+				                    <form ng-controller="CustomerController" >
+				                    	<div class="form-group">
+				                    		<label class="sr-only" for="form-first-name">First name</label>
+				                        	<input type="text" ng-model="firstname" placeholder="First name..." class="form-first-name form-control" id="form-first-name"  ></input>
+				                        </div>
+				                        <div class="form-group">
+				                        	<label class="sr-only" for="form-last-name">Last name</label>
+				                        	<input type="text" ng-model="lastname" placeholder="Last name..." class="form-last-name form-control" id="form-last-name" ></input>
+				                        </div>
+				                        
+				                        <div class="form-group">
+										  <label for="sel1">Gender:</label>
+										  <select class="form-control" id="sel1" ng-model="gender">
+										    <option>Male</option>
+										    <option>Female</option>
+										   
+										  </select>
+										</div>
+										
+										<div class="form-group">
+				                    		<label class="sr-only" for="form-Cell">Cellphone</label>
+				                        	<input type="text" ng-model="cellphone" placeholder="Cell..." class="form-first-cellphone form-control" id="form-celll" ></input>
+				                        </div>
+				                        
+										 <div class="form-group">
+				                        	<label class="sr-only" for="form-email">Email</label>
+				                        	<input type="text" ng-model="email" placeholder="Email..." class="form-email form-control" id="form-email" ></input>
+				                        </div>
+														                        
+				                        <div class="form-group">
+				                        	<label class="sr-only" for="form-password">password</label>
+				                        	<input type="text" ng-model="password" placeholder="Password" class="form-password form-control" id="form-password"></input>
+				                        </div>
+				                       
+				                        <button  type="submit" class="btn" id="submit" ng-submit="addProfile()"  role="form" action="" method="post" class="registration-form">Sign me up!</button>
+				                    </form>
+			                    </div>
+                        	</div>
+                        	
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html ng-app="NetFloristProject">
+<head>
+  <title>Bootstrap Example</title>
+  
+     <script src="/angular.js" type="text/javascript"></script>
+    <script src="/angular-route.min.js" type="text/javascript"></script>
+    <script src="/app.js" type="text/javascript"></script>
+    <script src="/PartnerService.js" type="text/javascript"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  
+  <style>
+    /* Remove the navbar's default rounded borders and increase the bottom margin */ 
+    .navbar {
+      margin-bottom: 50px;
+      border-radius: 0;
+    }
+    
+    /* Remove the jumbotron's default bottom margin */ 
+     .jumbotron {
+      margin-bottom: 0;
+    }
+   
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+  </style>
+  
+</head>
+<body ng-controller="productControllerView">
+
+<footer class="container-fluid text-center">
+        <h1>NETFLORIST</h1>
+        <form class="form-inline">Search:
+    <input type="text" class="form-control" size="50" ng-model="searchText.name" placeholder="Search item by name"/>
+
+  </form>
+</footer> 
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header nav-left">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="adminViewP.html">Home</a></li>
+        <li><a href="AdminAddP.html">Add Product</a></li>
+        <li><a href="orderP.html">View-Orders</a></li>
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="index.html"><span class="glyphicon glyphicon-log-out"></span>log-out</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+              <footer class="container-fluid text-center">
+        <h1>Product Table</h1>
+</footer>
+   <div class="container">
+  <div class="row">     
+
+  <table class="table table-hover table-striped">
+ <tr><th>Id</th> 
+    <th>Name</th>
+      <th>Description</th>
+       <th>Price</th>
+        <th>Image</th>
+         <th>Action</th>
+          
+   </tr>
+    <tr ng-repeat="product in products | filter:searchText">
+          
+        <td>   {{product.id}}  </td>
+         <td>  {{product.name}} </td>
+          <td>  {{product.description}}</td>
+           <td>   {{product.price | currency:"R"}}  </td>
+             <td><span><img ng-src="{{product.image}}" width="250" height="250" alt=""/></span></td>
+ 
+   <td>
+        <div>
+         <input type="submit" name="delete" id="submit" ng-click="deleteProduct(product.id)" value="delete" class="btn btn-danger" />
+        <!--    <input type="submit" name="update" id="submit" ng-click="updateProduct(product.id)" value="update" class="btn btn-info" />
+        -->
+        </div>
+       </td>
+    </tr>
+          
+  </table>
+
+  </div>
+ </div>
+ 
+</body>
+</html>

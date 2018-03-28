@@ -1,0 +1,24 @@
+{
+    "elements": {
+        "h1": {}
+    },
+    "attributes": {
+        "ng-model": {
+            "context": "input"
+        },
+        "ng-src": {},
+        "ng-click": {
+            "context": "input"
+        },
+        "ng-controller": {
+            "context": "body"
+        },
+        "ng-bind": {
+            "context": "span"
+        },
+        "ng-repeat": {
+            "context": "tr"
+        },
+        "ng-app": {}
+    }
+}

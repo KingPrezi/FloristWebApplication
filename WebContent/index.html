@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html  ng-app="myApp" xmlns:th="http://www.thymeleaf.org" lang="en" >
+
+    <head>
+
+        <meta charset="utf-8"></meta>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+        <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+        <title>Netflorist Login &amp; Register </title>
+		<!-- Javascript -->
+        <script src="./static/assets/js/jquery-1.11.1.min.js"></script>
+        <script src="./static/assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="./static/assets/js/scripts.js"></script>
+       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+       
+        <script src="/webjars/angularjs/1.4.9/angular.js"></script>
+		<script src="/webjars/angularjs/1.4.9/angular-resource.js"></script>
+		
+		<script src="./static/js/myApp.js"></script>
+		<script src="./static/js/controller.js"></script>
+        
+        <!-- CSS -->
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500"></link>
+        <link rel="stylesheet" href="./static/assets/bootstrap/css/bootstrap.min.css"></link>
+        <link rel="stylesheet" href="./static/assets/font-awesome/css/font-awesome.min.css"></link>
+		<link rel="stylesheet" href="./static/assets/css/form-elements.css"></link>
+        <link rel="stylesheet" href="./static/assets/css/style.css"></link>
+         
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <!-- Favicon and touch icons -->
+        <link rel="shortcut icon" href="assets/ico/favicon.png"></link>
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="./static/assets/ico/apple-touch-icon-144-precomposed.png"></link>
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="./static/assets/ico/apple-touch-icon-114-precomposed.png"></link>
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="./static/assets/ico/apple-touch-icon-72-precomposed.png"></link>
+        <link rel="apple-touch-icon-precomposed" href="./static/assets/ico/apple-touch-icon-57-precomposed.png"></link>
+
+    </head>
+
+    <body>
+    
+     <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      </button>
+      <a class="navbar-brand" href="#">NetFlorist|Home</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="#/reg">Contact us</a></li>
+       	<li ><a href="#/reg">Shop</a></li> 
+        <li ><a href="#/reg">Shopping Basket</a></li> 
+         <li class="active"><a href="#/reg">Track Order</a></li> 
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+      
+        <li><a href="./reg.html"><span class="glyphicon glyphicon-log-in"></span> Login/Register</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    
+    
+     <div class="generic-container" >
+    	<ng-view=""></ng-view>
+     </div>
+        
+    </body>
+
+</html>

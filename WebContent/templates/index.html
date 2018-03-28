@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html ng-app="NetFloristProject">
+<head>
+  <title>Bootstrap Example</title>
+  
+     <script src="/angular.js" type="text/javascript"></script>
+    <script src="/angular-route.min.js" type="text/javascript"></script>
+    <script src="/app.js" type="text/javascript"></script>
+    <script src="/PartnerService.js" type="text/javascript"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  
+  <style>
+    /* Remove the navbar's default rounded borders and increase the bottom margin */ 
+    .navbar {
+      margin-bottom: 50px;
+      border-radius: 0;
+    }
+    
+    /* Remove the jumbotron's default bottom margin */ 
+     .jumbotron {
+      margin-bottom: 0;
+    }
+   
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+  </style>
+  
+</head>
+<body ng-controller="productControllerView">
+
+<footer class="container-fluid text-center">
+        <h1>NETFLORIST</h1>
+        <form class="form-inline">Search:
+    <input type="text" class="form-control" size="50" ng-model="searchText.name" placeholder="Search item by name"/>
+
+  </form>
+</footer> 
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#"></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-left">
+        <li class="active"><a href="/home.html">Home</a></li>
+        <li><a href="contactUs.html">contact us</a></li>
+        <li><a href="">help</a></li>
+      </ul>
+        
+        
+      <ul class="nav navbar-nav navbar-right">
+         <li><a data-target="myBtn" class="btn btn-login" id="myBtn" data-toggle="modal"><b>login\register</b></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+              <footer class="container-fluid text-center">
+        <h1>Product Table</h1>
+</footer>
+   <div class="container" ng-controller="productControllerView">
+  <div class="row">     
+
+  <table class="table table-hover table-border">
+      <tr>
+      <td>Id</td>
+       <th>Image</th>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Price</th>
+          <th></th>
+          
+      </tr>
+    <tr ng-repeat="product in products | filter:searchText">
+         <td>{{product.id}}</td> 
+        <td><span><img ng-src="{{product.image}}" width="250" height="250" alt=""/></span></td>
+        <td>  {{product.name}} </td>
+        <td>  {{product.description}}</td>
+        <td>   {{product.price | currency:"R"}}  </td>
+         
+       
+    </tr>
+          
+  </table>
+  </div>
+ </div>
+  
+<div class="container"  ng-controller="login">
+  
+  <!-- login function -->
+  
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header" style="padding:35px 50px;">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4><span class="glyphicon glyphicon-lock"></span> Login</h4>
+        </div>
+        <div class="modal-body" style="padding:40px 50px;">
+          <form role="form">
+            <div class="form-group">
+              <label for="Email"><span class="glyphicon glyphicon-user"></span>Email</label>
+              <input type="text" class="form-control" id="usrname" placeholder="Enter email"  ng-model="email" autocomplete="off"/>
+            </div>
+            <div class="form-group">
+              <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
+              <input type="password" class="form-control" id="password" placeholder="Enter password" ng-model="password" autocomplete="off"/>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" value="" />Remember me</label>
+            </div>
+              
+              <button type="submit" class="btn btn-success btn-block" onclick="myFunction()" ng-click="gets()"><span class="glyphicon glyphicon-off"></span> Login</button>
+              <button type="button" class="btn btn-default btn-block" onclick="myFunction()" ng-click="create()" id="myreg"><span class="glyphicon glyphicon-off"></span> signup</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+          <p>Not a member? <a href="registration.html">register</a></p>
+          <p>Forgot <a href="#">Password?</a></p>
+        </div>
+      </div>
+      
+    </div>
+  </div> 
+</div>
+
+<script>
+$(document).ready(function(){
+    $("#myreg").click(function(){
+        $("#Modal").modal();
+    });
+});
+
+$(document).ready(function(){
+    $("#myBtn").click(function(){
+        $("#myModal").modal();
+    });
+});
+
+function myFunction() {
+    location.reload();
+}
+
+</script>
+
+</body>
+</html>
